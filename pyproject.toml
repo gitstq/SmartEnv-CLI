@@ -1,0 +1,75 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smartenv-cli"
+version = "1.0.0"
+description = "🧠 Smart environment variable manager for developers"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.8"
+authors = [
+    {name = "SmartEnv Team", email = "smartenv@example.com"},
+]
+keywords = ["env", "dotenv", "environment", "variables", "cli", "developer-tools", "config"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "click>=8.0.0",
+    "rich>=13.0.0",
+    "cryptography>=41.0.0",
+    "pyyaml>=6.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=23.0.0",
+    "flake8>=6.0.0",
+    "mypy>=1.0.0",
+]
+
+[project.scripts]
+smartenv = "smartenv.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/gitstq/SmartEnv-CLI"
+Documentation = "https://github.com/gitstq/SmartEnv-CLI#readme"
+Repository = "https://github.com/gitstq/SmartEnv-CLI.git"
+Issues = "https://github.com/gitstq/SmartEnv-CLI/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["smartenv*"]
+exclude = ["tests*"]
+
+[tool.black]
+line-length = 100
+target-version = ['py38']
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "--cov=smartenv --cov-report=term-missing"
