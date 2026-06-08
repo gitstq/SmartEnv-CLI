@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+smartenv/__init__.py
+smartenv/__main__.py
+smartenv/cli.py
+smartenv/core.py
+smartenv_cli.egg-info/PKG-INFO
+smartenv_cli.egg-info/SOURCES.txt
+smartenv_cli.egg-info/dependency_links.txt
+smartenv_cli.egg-info/entry_points.txt
+smartenv_cli.egg-info/not-zip-safe
+smartenv_cli.egg-info/requires.txt
+smartenv_cli.egg-info/top_level.txt
+tests/test_core.py
